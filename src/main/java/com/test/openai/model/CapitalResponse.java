@@ -1,4 +1,4 @@
-package com.test.openai.demo.model;
+package com.test.openai.model;
 
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 

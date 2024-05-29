@@ -1,4 +1,4 @@
-package com.test.openai.demo.model;
+package com.test.openai.model;
 
 public record CapitalRequest(String country) {
 }

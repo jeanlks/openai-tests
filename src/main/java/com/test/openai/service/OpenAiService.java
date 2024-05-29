@@ -1,9 +1,9 @@
-package com.test.openai.demo.service;
+package com.test.openai.service;
 
-import com.test.openai.demo.model.Answer;
-import com.test.openai.demo.model.CapitalRequest;
-import com.test.openai.demo.model.CapitalResponse;
-import com.test.openai.demo.model.Question;
+import com.test.openai.model.Answer;
+import com.test.openai.model.CapitalRequest;
+import com.test.openai.model.CapitalResponse;
+import com.test.openai.model.Question;
 import org.springframework.stereotype.Service;
 
 public interface OpenAiService {

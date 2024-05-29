@@ -1,8 +1,8 @@
-package com.test.openai.demo;
+package com.test.openai;
 
-import com.test.openai.demo.model.Answer;
-import com.test.openai.demo.model.Question;
-import com.test.openai.demo.service.OpenAiService;
+import com.test.openai.model.Answer;
+import com.test.openai.model.Question;
+import com.test.openai.service.OpenAiService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

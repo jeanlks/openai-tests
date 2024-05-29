@@ -1,10 +1,10 @@
-package com.test.openai.demo.controller;
+package com.test.openai.controller;
 
-import com.test.openai.demo.model.Answer;
-import com.test.openai.demo.model.CapitalRequest;
-import com.test.openai.demo.model.CapitalResponse;
-import com.test.openai.demo.model.Question;
-import com.test.openai.demo.service.OpenAiService;
+import com.test.openai.model.Answer;
+import com.test.openai.model.CapitalRequest;
+import com.test.openai.model.CapitalResponse;
+import com.test.openai.model.Question;
+import com.test.openai.service.OpenAiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
