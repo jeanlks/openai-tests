@@ -2,6 +2,7 @@ package com.test.openai.demo.controller;
 
 import com.test.openai.demo.model.Answer;
 import com.test.openai.demo.model.CapitalRequest;
+import com.test.openai.demo.model.CapitalResponse;
 import com.test.openai.demo.model.Question;
 import com.test.openai.demo.service.OpenAiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class QuestionController {
     }
 
     @PostMapping("/ask/capital-info")
-    public Answer askCapitalWihtInfo(@RequestBody CapitalRequest capital){
+    public CapitalResponse askCapitalWihtInfo(@RequestBody CapitalRequest capital){
         return openAiService.getCapitalWithInfo(capital);
     }
 

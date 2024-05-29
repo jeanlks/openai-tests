@@ -1,12 +1,15 @@
 package com.test.openai.demo.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.test.openai.demo.model.Answer;
 import com.test.openai.demo.model.CapitalRequest;
+import com.test.openai.demo.model.CapitalResponse;
 import com.test.openai.demo.model.Question;
 import org.springframework.ai.chat.ChatClient;
 import org.springframework.ai.chat.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.PromptTemplate;
+import org.springframework.ai.parser.BeanOutputParser;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -48,11 +51,13 @@ public class OpenAiServiceImpl implements OpenAiService {
     }
 
     @Override
-    public Answer getCapitalWithInfo(CapitalRequest capitalRequest) {
+    public CapitalResponse getCapitalWithInfo(CapitalRequest capitalRequest) {
+        BeanOutputParser<CapitalResponse> parser = new BeanOutputParser<>(CapitalResponse.class);
+        String format = parser.getFormat();
         PromptTemplate promptTemplate = new PromptTemplate(capitalPromptTemplateWithInfo);
-        Prompt prompt = promptTemplate.create(Map.of("country", capitalRequest.country()));
+        Prompt prompt = promptTemplate.create(Map.of("country", capitalRequest.country(),
+                                                    "format", format));
         ChatResponse chatResponse = client.call(prompt);
-
-        return new Answer(chatResponse.getResult().getOutput().getContent());
+        return parser.parse(chatResponse.getResult().getOutput().getContent());
     }
 }
