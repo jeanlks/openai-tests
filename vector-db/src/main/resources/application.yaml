@@ -1,0 +1,25 @@
+spring:
+  ai:
+    vectorstore:
+      milvus:
+        collection-name: vector_store
+        metric-type: COSINE
+        index-type: IVF_FLAT
+        embedding-dimension: '1536'
+        client:
+          port: '19530'
+          host: localhost
+          username: root
+          password: milvus
+        database-name: default
+    openai:
+      embedding:
+        options:
+          model: text-embedding-3-small
+      api-key: ${OPENAI_KEY}
+  application:
+    name: openai-demo
+sfg:
+  aiapp:
+    documentsToLoad:
+      - classpath:/test.txt

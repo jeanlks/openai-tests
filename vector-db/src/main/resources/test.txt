@@ -1,0 +1,6 @@
+neighbourhood,price
+westmount,extremely high
+brossard,medium
+downtown,high
+anjou,high
+boucherville, medium
